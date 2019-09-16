@@ -25,7 +25,7 @@ class Address:
             zips = Zip.search([
                         ('zip', '=', self.zip),
                         ('subdivision.country', '=', self.country.id),
-                        ])
+                        ], limit=1)
             if zips:
                 zip_, = zips
                 self.city = zip_.city
